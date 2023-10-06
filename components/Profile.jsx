@@ -22,7 +22,7 @@ const Profile = ({ name, desc, data, handleDelete, handleEdit }) => {
         ))}
         </>
        ):(
-        <div>Loading...</div>
+        <div>No post found!</div>
        )}
       </div>
     </div>
