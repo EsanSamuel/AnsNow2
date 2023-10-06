@@ -18,7 +18,7 @@ const CardList = ({ data, handleTagClick }) => {
           ))}
         </>
       ) : (
-        <div>Loading...</div>
+        <div>No post found!</div>
       )}
     </div>
   );
