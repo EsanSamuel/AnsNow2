@@ -17,6 +17,7 @@ const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
             className="w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0 input"
             placeholder="Enter Prompt"
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+            value={post.prompt}
           />
         </label>
 
@@ -26,6 +27,7 @@ const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
             className="w-full flex rounded-lg mt-2 p-3 text-sm tex3t-gray-500 outline-0 input"
             placeholder="#tag"
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            value={post.tag}
           />
         </label>
       </div>
