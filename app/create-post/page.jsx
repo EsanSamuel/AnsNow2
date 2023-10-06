@@ -29,6 +29,9 @@ if(response.ok){
 }
     } catch (error) {
       console.log(error);
+    } finally {
+      setSubmitting(false)
+      router.push('/')
     }
   };
   return (
