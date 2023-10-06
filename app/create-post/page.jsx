@@ -23,8 +23,10 @@ const Index = () => {
         userId: session?.user.id,
         tag: post.tag,
       });
-
+      
+if(response.ok){
       router.push("/");
+}
     } catch (error) {
       console.log(error);
     }
