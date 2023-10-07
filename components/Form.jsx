@@ -19,6 +19,7 @@ const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
             placeholder="Enter Prompt"
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             value={post.prompt}
+            required 
           />
         </label>
 
@@ -29,6 +30,7 @@ const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
             placeholder="#tag"
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             value={post.tag}
+            required 
           />
         </label>
       </div>
