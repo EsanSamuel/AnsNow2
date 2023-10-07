@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
   return (
@@ -32,7 +33,7 @@ const Form = ({ type, post, setPost, handleSubmit, submitting }) => {
         </label>
       </div>
       <div className="flex float-right gap-3 mt-5 pb-5">
-        <button className="bg-red-400 p-2 rounded text-white">Cancel</button>
+       <Link href='/'><button className="bg-red-400 p-2 rounded text-white">Cancel</button></Link>
         {!submitting ? (
           <button
             className="bg-green-400 p-2 rounded text-white"
