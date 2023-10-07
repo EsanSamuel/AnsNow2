@@ -9,7 +9,7 @@ const CardList = ({ data, handleTagClick }) => {
     <div className="mt-16 flex justify-center flex-col items-center gap-3">
       {data?.length > 0 ? (
         <>
-          {data.reverse().map((post) => (
+          {data.slice().reverse().map((post) => (
             <PromptCard
               key={post._id}
               post={post}
