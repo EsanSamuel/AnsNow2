@@ -3,6 +3,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PromptCard from "./PromptCard";
+import ClipLoader from "react-spinners/ClipLoader";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "blue",
+};
 
 const CardList = ({ data, handleTagClick }) => {
   return (
@@ -29,12 +36,15 @@ const Feed = () => {
   const [allPost, setAllPosts] = useState([]);
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
+  const [isLoading,setIsLoading] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true)
       const response = await axios.get("/api/prompt");
       setAllPosts(response.data.reverse());
       console.log(response.data);
+      setIsLoading(false)
     };
 
     getData();
@@ -81,6 +91,19 @@ const Feed = () => {
         onChange={handleSearchChange}
         value={searchText}
       />
+
+      {isLoading && (
+      <div className='text-center mt-10'>
+      <ClipLoader
+        color='blue'
+        loading='loading'
+        cssOverride={override}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      </div>
+      )}
 
       {searchText ? (
         <CardList data={searchedResults} handleTagClick={handleTagClick} />
